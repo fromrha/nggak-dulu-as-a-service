@@ -1,0 +1,152 @@
+[
+  {
+    "id": "general-sopan-001",
+    "text": "Makasih sudah ngajak, tapi untuk sekarang aku nggak bisa ikut dulu.",
+    "category": "general",
+    "tone": "sopan"
+  },
+  {
+    "id": "general-witty-001",
+    "text": "Aku skip dulu ya. Bukan anti sosial, cuma baterai sosial lagi mode hemat daya.",
+    "category": "general",
+    "tone": "witty"
+  },
+  {
+    "id": "general-dingin-001",
+    "text": "Nggak dulu.",
+    "category": "general",
+    "tone": "dingin"
+  },
+  {
+    "id": "general-lucu-001",
+    "text": "Aku nggak dulu ya. Jadwalku lagi penuh sama agenda rebahan strategis.",
+    "category": "general",
+    "tone": "lucu"
+  },
+  {
+    "id": "general-tegas-001",
+    "text": "Untuk saat ini aku belum bisa menerima ajakan itu. Terima kasih sudah memahami.",
+    "category": "general",
+    "tone": "tegas"
+  },
+  {
+    "id": "corporate-sopan-001",
+    "text": "Terima kasih atas penawarannya. Untuk saat ini saya belum dapat melanjutkan kesempatan tersebut.",
+    "category": "corporate",
+    "tone": "sopan"
+  },
+  {
+    "id": "corporate-witty-001",
+    "text": "Menarik sekali, tetapi bandwidth saya sedang tidak cukup untuk menambah tab baru di hidup profesional saya.",
+    "category": "corporate",
+    "tone": "witty"
+  },
+  {
+    "id": "corporate-dingin-001",
+    "text": "Saya tidak bisa ikut untuk saat ini.",
+    "category": "corporate",
+    "tone": "dingin"
+  },
+  {
+    "id": "corporate-lucu-001",
+    "text": "Saya izin nggak dulu. Kalender saya sudah seperti spreadsheet tanpa filter.",
+    "category": "corporate",
+    "tone": "lucu"
+  },
+  {
+    "id": "corporate-tegas-001",
+    "text": "Saya harus menolak kesempatan ini agar tetap fokus pada prioritas yang sudah berjalan.",
+    "category": "corporate",
+    "tone": "tegas"
+  },
+  {
+    "id": "kampus-sopan-001",
+    "text": "Makasih sudah ngajak, tapi aku belum bisa ikut kegiatan itu dulu ya.",
+    "category": "kampus",
+    "tone": "sopan"
+  },
+  {
+    "id": "kampus-witty-001",
+    "text": "Aku nggak dulu ya. Deadline-ku sedang cosplay jadi final boss.",
+    "category": "kampus",
+    "tone": "witty"
+  },
+  {
+    "id": "kampus-dingin-001",
+    "text": "Aku nggak ikut dulu.",
+    "category": "kampus",
+    "tone": "dingin"
+  },
+  {
+    "id": "kampus-lucu-001",
+    "text": "Aku izin nggak ikut dulu ya. Bukan sok sibuk, cuma hidupku lagi buffering.",
+    "category": "kampus",
+    "tone": "lucu"
+  },
+  {
+    "id": "kampus-tegas-001",
+    "text": "Aku belum bisa ikut karena perlu fokus menyelesaikan tanggung jawab kuliah dulu.",
+    "category": "kampus",
+    "tone": "tegas"
+  },
+  {
+    "id": "teman-sopan-001",
+    "text": "Makasih ya sudah ngajak. Aku nggak bisa ikut dulu kali ini.",
+    "category": "teman",
+    "tone": "sopan"
+  },
+  {
+    "id": "teman-witty-001",
+    "text": "Aku skip dulu. Dompet dan energi sosialku sedang rapat tertutup.",
+    "category": "teman",
+    "tone": "witty"
+  },
+  {
+    "id": "teman-dingin-001",
+    "text": "Nggak dulu ya.",
+    "category": "teman",
+    "tone": "dingin"
+  },
+  {
+    "id": "teman-lucu-001",
+    "text": "Aku nggak dulu, takut nanti keluar rumah terus lupa cara pulang ke kasur.",
+    "category": "teman",
+    "tone": "lucu"
+  },
+  {
+    "id": "teman-tegas-001",
+    "text": "Aku nggak bisa ikut. Kali ini aku perlu waktu untuk diri sendiri dulu.",
+    "category": "teman",
+    "tone": "tegas"
+  },
+  {
+    "id": "freelance-sopan-001",
+    "text": "Terima kasih sudah menghubungi saya. Untuk saat ini saya belum bisa mengambil proyek tersebut.",
+    "category": "freelance",
+    "tone": "sopan"
+  },
+  {
+    "id": "freelance-witty-001",
+    "text": "Brief-nya menarik, tapi antrean kerja saya sedang lebih panjang dari revisi tanpa scope.",
+    "category": "freelance",
+    "tone": "witty"
+  },
+  {
+    "id": "freelance-dingin-001",
+    "text": "Saya belum bisa menerima proyek ini.",
+    "category": "freelance",
+    "tone": "dingin"
+  },
+  {
+    "id": "freelance-lucu-001",
+    "text": "Saya nggak ambil dulu ya. Kalau dipaksa, laptop saya yang resign duluan.",
+    "category": "freelance",
+    "tone": "lucu"
+  },
+  {
+    "id": "freelance-tegas-001",
+    "text": "Saya belum dapat menerima proyek ini karena kapasitas kerja saya sudah penuh.",
+    "category": "freelance",
+    "tone": "tegas"
+  }
+]

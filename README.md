@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nggak Dulu as a Service
 
-## Getting Started
+Tiny Indonesian API and web app for generating rejection sentences across different contexts and tones.
 
-First, run the development server:
+Use it when you need to say **nggak dulu** without making things awkward.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+- Landing page with generator UI
+- Category and tone filters
+- Copy-to-clipboard result
+- Public API endpoint
+- Local JSON dataset, no database
+- Open-source friendly Next.js structure
+
+## API Usage
+
+### Endpoint
+
+```http
+GET /api/no
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Query Parameters
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Parameter | Required | Example | Description |
+|---|---:|---|---|
+| `category` | No | `kampus` | Filter by context/category |
+| `tone` | No | `sopan` | Filter by tone |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Example Requests
 
-## Learn More
+```bash
+curl http://localhost:3000/api/no
+curl http://localhost:3000/api/no?category=kampus
+curl "http://localhost:3000/api/no?category=corporate&tone=sopan"
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Example Response
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{
+  "id": "general-sopan-001",
+  "text": "Makasih sudah ngajak, tapi untuk sekarang aku nggak bisa ikut dulu.",
+  "category": "general",
+  "tone": "sopan"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Error Response
 
-## Deploy on Vercel
+```json
+{
+  "error": "No matching reason found."
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Categories
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `general`
+- `corporate`
+- `kampus`
+- `teman`
+- `freelance`
+
+## Available Tones
+
+- `sopan`
+- `witty`
+- `dingin`
+- `lucu`
+- `tegas`
+
+## Local Installation
+
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Self-hosting
+
+Deploy to Vercel or any platform that supports Next.js App Router.
+
+```bash
+npm run build
+npm run start
+```
+
+## Project Structure
+
+```txt
+src/
+├── app/
+│   ├── api/no/route.ts
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── ApiDocs.tsx
+│   ├── Footer.tsx
+│   ├── Generator.tsx
+│   └── Hero.tsx
+├── data/reasons.json
+└── lib/
+    ├── getRandomReason.ts
+    └── types.ts
+```
+
+## Contributing
+
+PRs welcome. Add new lines to `src/data/reasons.json` using existing category and tone values.
+
+## License
+
+MIT recommended. Add a `LICENSE` file before first public release if needed.
+
+## Sponsor
+
+Sponsor placeholder. If this becomes useful, caffeine funding may appear here.
