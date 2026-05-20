@@ -42,6 +42,8 @@ next-env.d.ts
 
 # local agent rules and skills
 GEMINI.md
+AGENTS.md
+CLAUDE.md
 .gemini/
 .skills/
 skills/
