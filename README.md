@@ -1,5 +1,8 @@
 # Nggak Dulu as a Service
 
+## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=fromrha/nggak-dulu-as-a-service@github)](https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github)
+
 Tiny Indonesian API and web app for generating rejection sentences across different contexts and tones.
 
 Use it when you need to say **nggak dulu** without making things awkward.
@@ -118,8 +121,6 @@ PRs welcome. Add new lines to `src/data/reasons.json` using existing category an
 MIT recommended. Add a `LICENSE` file before first public release if needed.
 
 ## Sponsor
-
-<!-- GitAds-Verify: C1HN1WHHZIJGSEPTMSAGKGWJS58BMBML -->
 
 Support this project to help it grow!
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/fromrha)
