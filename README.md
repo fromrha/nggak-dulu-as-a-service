@@ -1,9 +1,25 @@
 # Nggak Dulu as a Service
 
-## GitAds Sponsored
-[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=fromrha/nggak-dulu-as-a-service@github)](https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github)
+<div align="center">
+  <a href="https://github.com/sponsors/fromrha">
+    <img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github" alt="GitHub Sponsor" />
+  </a>
+</div>
 
-Tiny Indonesian API and web app for generating rejection sentences across different contexts and tones.
+<br/>
+
+<div align="center">
+  <a href="https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github">
+    <img src="https://gitads.dev/v1/ad-serve?source=fromrha/nggak-dulu-as-a-service@github" alt="Sponsored by GitAds" height="50" />
+  </a>
+  <p>
+    This project is sponsored by <a href="https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github">GitAds</a>.<br/>
+    You can get your GitHub repository sponsored too — <a href="https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github">create your account now</a>.
+  </p>
+</div>
+
+Tiny Indonesian API and web app for generating rejection sentences across different contexts and tones. 
+*Inspired by and localized from [hotheadhacker/no-as-a-service](https://github.com/hotheadhacker/no-as-a-service).*
 
 Use it when you need to say **nggak dulu** without making things awkward.
 
@@ -120,7 +136,3 @@ PRs welcome. Add new lines to `src/data/reasons.json` using existing category an
 
 MIT recommended. Add a `LICENSE` file before first public release if needed.
 
-## Sponsor
-
-Support this project to help it grow!
-[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/fromrha)
