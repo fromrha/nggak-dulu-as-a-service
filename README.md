@@ -119,4 +119,7 @@ MIT recommended. Add a `LICENSE` file before first public release if needed.
 
 ## Sponsor
 
-Sponsor placeholder. If this becomes useful, caffeine funding may appear here.
+<!-- GitAds-Verify: C1HN1WHHZIJGSEPTMSAGKGWJS58BMBML -->
+
+Support this project to help it grow!
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/fromrha)
