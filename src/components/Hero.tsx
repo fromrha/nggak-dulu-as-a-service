@@ -1,34 +1,59 @@
+import { Sparkles, ArrowRight, Code } from "lucide-react";
+
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-8" aria-labelledby="hero-title">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,122,0,0.28),transparent_32%),radial-gradient(circle_at_75%_10%,rgba(255,214,10,0.18),transparent_28%),linear-gradient(135deg,#140f2d_0%,#241146_48%,#0c0a16_100%)]" />
-      <div className="absolute left-1/2 top-20 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-fuchsia-500/20 blur-3xl" />
+    <section className="relative overflow-hidden px-6 py-24 sm:py-32 lg:px-8 flex flex-col items-center justify-center" aria-labelledby="hero-title">
+      {/* Decorative radial gradient for general background ambient illumination */}
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.08),transparent_50%)]" />
 
-      <div className="mx-auto max-w-5xl text-center">
-        <p className="mb-6 inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-amber-100 shadow-2xl shadow-amber-500/10 backdrop-blur">
-          API lucu buat bilang tidak tanpa bikin suasana tegang
-        </p>
-        <h1 id="hero-title" className="text-balance text-5xl font-black tracking-tight text-white sm:text-7xl">
-          Nggak Dulu as a Service
+      {/* Grid Pattern overlay */}
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+
+      <div className="mx-auto max-w-4xl text-center relative">
+        {/* Glow behind header */}
+        <div className="theme-transition absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[300px] w-[300px] rounded-full bg-[rgb(var(--accent-primary)/0.12)] blur-[100px] pointer-events-none" />
+
+        {/* Badge */}
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-1.5 text-xs font-semibold text-zinc-300 shadow-xl backdrop-blur-md">
+          <Sparkles className="theme-transition h-3.5 w-3.5 text-[rgb(var(--accent-primary))]" />
+          <span>Indonesian Rejection API & Generator</span>
+        </div>
+
+        {/* Main Heading */}
+        <h1 
+          id="hero-title" 
+          className="text-balance text-5xl font-extrabold tracking-tight text-white sm:text-7xl leading-[1.1] md:leading-[1.05]"
+        >
+          Bilang{" "}
+          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent">
+            Nggak Dulu
+          </span>{" "}
+          Dengan Elegan
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-amber-50/80 sm:text-xl">
-          Generator kalimat penolakan untuk orang Indonesia yang ingin bilang tidak, tanpa bikin suasana jadi aneh.
+
+        {/* Subtitle */}
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
+          Generator kalimat penolakan profesional, santai, dan taktis untuk membantu Anda berkata tidak. Lengkap dengan public API siap pakai untuk integrasi instan.
         </p>
+
+        {/* Actions */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             id="hero-generate-link"
             href="#generator"
-            className="group rounded-full bg-amber-300 px-7 py-4 text-base font-bold text-stone-950 shadow-[0_20px_80px_rgba(251,191,36,0.35)] transition hover:-translate-y-1 hover:bg-amber-200"
+            className="theme-transition group flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-zinc-950 shadow-[0_20px_50px_rgba(255,255,255,0.08)] hover:-translate-y-0.5 hover:bg-zinc-100"
           >
-            Generate Nggak Dulu
-            <span className="ml-2 inline-block transition group-hover:translate-x-1">→</span>
+            Mulai Generator
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
+          
           <a
             id="hero-api-link"
             href="#api-docs"
-            className="rounded-full border border-white/15 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur transition hover:-translate-y-1 hover:bg-white/15"
+            className="theme-transition flex items-center gap-2 rounded-xl border border-zinc-850 bg-zinc-900/50 hover:bg-zinc-900/90 px-6 py-3.5 text-sm font-semibold text-zinc-300 backdrop-blur hover:-translate-y-0.5"
           >
-            Lihat API Docs
+            <Code className="h-4 w-4 text-zinc-400" />
+            Integrasi API
           </a>
         </div>
       </div>
