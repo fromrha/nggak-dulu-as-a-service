@@ -13,6 +13,11 @@
     <img src="https://gitads.dev/assets/images/sponsor/camos/camo-3.png" alt="Sponsored by GitAds" />
   </a>
 </p>
+<p align="center">
+  This project is sponsored by <a href="https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github">GitAds</a>.<br/>
+  You can get your GitHub repository sponsored too — <a href="https://gitads.dev/v1/ad-track?source=fromrha/nggak-dulu-as-a-service@github">create your account now</a>.
+</p>
+
 
 Tiny Indonesian API and web app for generating rejection sentences across different contexts and tones. 
 *Inspired by and localized from [hotheadhacker/no-as-a-service](https://github.com/hotheadhacker/no-as-a-service).*
