@@ -1,8 +1,8 @@
-import reasons from "@/data/reasons.json";
-import type { Category, Reason, Tone } from "./types";
+import reasonsJson from "@/data/reasons.json";
+import type { Category, Tone } from "./types";
 import { CATEGORIES, TONES } from "./types";
 
-const typedReasons = reasons as Reason[];
+const reasons = reasonsJson as Record<Category, Record<Tone, string[]>>;
 
 export function isCategory(value: string | null): value is Category {
   return value !== null && CATEGORIES.includes(value as Category);
@@ -17,22 +17,31 @@ type RandomReasonInput = {
   tone?: Tone;
 };
 
-export function getRandomReason({ category, tone }: RandomReasonInput = {}) {
-  const filtered = typedReasons.filter((reason) => {
-    const categoryMatches = category ? reason.category === category : true;
-    const toneMatches = tone ? reason.tone === tone : true;
+type SelectedReason = {
+  text: string;
+  category: Category;
+  tone: Tone;
+};
 
-    return categoryMatches && toneMatches;
-  });
+export function getRandomReason({ category, tone }: RandomReasonInput = {}): SelectedReason | null {
+  const pool: SelectedReason[] = [];
 
-  if (filtered.length === 0) {
+  const catsToSearch = category ? [category] : CATEGORIES;
+  const tonesToSearch = tone ? [tone] : TONES;
+
+  for (const cat of catsToSearch) {
+    for (const t of tonesToSearch) {
+      const list = reasons[cat]?.[t] || [];
+      for (const text of list) {
+        pool.push({ text, category: cat, tone: t });
+      }
+    }
+  }
+
+  if (pool.length === 0) {
     return null;
   }
 
-  const randomIndex = Math.floor(Math.random() * filtered.length);
-  return filtered[randomIndex];
-}
-
-export function getAllReasons() {
-  return typedReasons;
+  const randomIndex = Math.floor(Math.random() * pool.length);
+  return pool[randomIndex];
 }

@@ -36,7 +36,6 @@ export function GET(request: Request) {
   }
 
   return NextResponse.json({
-    id: reason.id,
     text: reason.text,
     category: reason.category,
     tone: reason.tone,

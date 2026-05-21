@@ -18,3 +18,9 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 - Redesigned Generator UI into a terminal-styled component with copy feedback toasts.
 - Modernized API Docs into a dashboard console layout.
 - Upgraded Footer with modern typography, grids, and icon references.
+- Changed reasons dataset in `reasons.json` from flat array of objects to nested category-tone format.
+- Modified `getRandomReason` utility and `/api/no` API endpoint to read from the new nested format.
+- Removed `id` field from API responses to match the new nested structure.
+
+### Removed
+- Deleted temporary data files `datasementara1.json` and `datasementara2.json` after merging them.

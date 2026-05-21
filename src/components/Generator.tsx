@@ -34,7 +34,6 @@ const initialText = "Klik generate, nanti sistem bilang nggak dulu dengan lebih 
 export function Generator({ onToneChange, activeTone }: GeneratorProps) {
   const [category, setCategory] = useState<Category | "">("");
   const [result, setResult] = useState(initialText);
-  const [currentId, setCurrentId] = useState("");
   const [meta, setMeta] = useState("random / santai");
   const [isLoading, setIsLoading] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -79,7 +78,6 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
       }
 
       setResult(data.text);
-      setCurrentId(data.id);
       setMeta(`${CATEGORY_LABELS[data.category]} / ${TONE_LABELS[data.tone]}`);
     } catch {
       setError("Gagal menghubungi server. Coba lagi beberapa saat lagi.");
@@ -96,19 +94,19 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
 
   // Favorites logic
   const isBookmarked = useMemo(() => {
-    if (!currentId || result === initialText) return false;
-    return favorites.some(fav => fav.id === currentId || fav.text === result);
-  }, [favorites, currentId, result]);
+    if (result === initialText) return false;
+    return favorites.some(fav => fav.text === result);
+  }, [favorites, result]);
 
   function toggleBookmark() {
     if (result === initialText) return;
     
     let updated: Reason[];
     if (isBookmarked) {
-      updated = favorites.filter(fav => fav.id !== currentId && fav.text !== result);
+      updated = favorites.filter(fav => fav.text !== result);
     } else {
       const newFav: Reason = {
-        id: currentId || `custom-${Date.now()}`,
+        id: `fav-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
         text: result,
         category: (category as Category) || "general",
         tone: (activeTone as Tone) || "sopan"

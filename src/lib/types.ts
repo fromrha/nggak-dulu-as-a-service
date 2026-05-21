@@ -11,8 +11,10 @@ export type Reason = {
   tone: Tone;
 };
 
-export type ApiSuccess = Omit<Reason, "id"> & {
-  id: string;
+export type ApiSuccess = {
+  text: string;
+  category: Category;
+  tone: Tone;
 };
 
 export type ApiError = {
