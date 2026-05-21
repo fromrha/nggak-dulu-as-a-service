@@ -20,12 +20,12 @@ export function Hero() {
         </div>
 
         {/* Main Heading */}
-        <h1 
-          id="hero-title" 
-          className="text-balance text-5xl font-extrabold tracking-tight text-white sm:text-7xl leading-[1.1] md:leading-[1.05]"
+        <h1
+          id="hero-title"
+          className="text-balance text-5xl font-medium tracking-tight text-white sm:text-7xl leading-[1.1] md:leading-[1.05]"
         >
           Untuk semua ajakan yang harusnya{" "}
-          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline">
+          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline font-serif italic">
             tidak kamu iyakan
           </span>
         </h1>
@@ -45,7 +45,7 @@ export function Hero() {
             Generate Nggak Dulu
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
-          
+
           <a
             id="hero-api-link"
             href="#api-docs"
