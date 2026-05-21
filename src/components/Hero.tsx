@@ -25,14 +25,14 @@ export function Hero() {
           className="text-balance text-5xl font-medium tracking-tight text-white sm:text-7xl leading-[1.1] md:leading-[1.05]"
         >
           Untuk semua ajakan yang harusnya{" "}
-          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline font-serif italic">
+          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline font-serif">
             tidak kamu iyakan
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
-          Generator kalimat penolakan profesional, santai, dan taktis untuk membantu Anda berkata tidak. Lengkap dengan public API siap pakai untuk integrasi instan.
+          Generator penolakan untuk orang baik yang capek jadi people pleaser berkedok fleksibel.
         </p>
 
         {/* Actions */}
