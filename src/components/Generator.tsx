@@ -43,7 +43,11 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
   const [favorites, setFavorites] = useState<Reason[]>([]);
   const [favCopiedId, setFavCopiedId] = useState<string | null>(null);
 
-  // Load favorites from local storage on mount
+  // Stats State
+  const [localCount, setLocalCount] = useState<number>(0);
+  const [globalCount, setGlobalCount] = useState<number | null>(null);
+
+  // Initialize data on mount
   useEffect(() => {
     try {
       const saved = localStorage.getItem("nggak_dulu_favs");
@@ -53,6 +57,28 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
     } catch (e) {
       console.error("Gagal membaca favorites dari localStorage", e);
     }
+
+    try {
+      const savedCount = localStorage.getItem("nggakDuluLocalCount");
+      if (savedCount) {
+        setLocalCount(parseInt(savedCount, 10) || 0);
+      }
+    } catch (e) {
+      console.error("Gagal membaca local count dari localStorage", e);
+    }
+
+    async function fetchGlobalStats() {
+      try {
+        const response = await fetch("/api/stats");
+        if (response.ok) {
+          const data = await response.json();
+          setGlobalCount(data.globalRejections);
+        }
+      } catch (e) {
+        console.error("Gagal mengambil global stats", e);
+      }
+    }
+    fetchGlobalStats();
   }, []);
 
   const endpoint = useMemo(() => {
@@ -79,6 +105,17 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
 
       setResult(data.text);
       setMeta(`${CATEGORY_LABELS[data.category]} / ${TONE_LABELS[data.tone]}`);
+
+      // Increment local count
+      setLocalCount((prev) => {
+        const next = prev + 1;
+        try {
+          localStorage.setItem("nggakDuluLocalCount", next.toString());
+        } catch (e) {
+          console.error("Gagal menyimpan local count ke localStorage", e);
+        }
+        return next;
+      });
     } catch {
       setError("Gagal menghubungi server. Coba lagi beberapa saat lagi.");
     } finally {
@@ -156,6 +193,26 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
               <p className="mt-1 text-xs leading-normal text-zinc-400">
                 Menolak secara transparan menjaga reputasi profesional Anda. Sistem kami merancang kalimat yang diplomatis namun tetap tegas.
               </p>
+            </div>
+          </div>
+
+          {/* Stats Cards */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
+              <span className="text-xs font-bold text-zinc-400">Your Requests Rejected</span>
+              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none">{localCount}</span>
+            </div>
+            
+            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
+              <span className="text-xs font-bold text-zinc-400">Total Global Rejections</span>
+              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none">
+                {globalCount !== null ? globalCount.toLocaleString("id-ID") : "—"}
+              </span>
+            </div>
+            
+            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
+              <span className="text-xs font-bold text-zinc-400">Approval Rate</span>
+              <span className="mt-3 text-3xl font-extrabold text-rose-500 font-mono leading-none">0%</span>
             </div>
           </div>
         </div>

@@ -5,7 +5,14 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
+
+## [v0.2.0] - 2026-05-21
 ### Added
+- Local request rejection counter (`nggakDuluLocalCount`) using `localStorage`.
+- Basic IP-based rate limiting for `/api/no` with in-memory fallback.
+- `GET /api/stats` endpoint with graceful fallback support for global rejections.
+- Interactive stats cards in the Generator UI (Your Requests Rejected, Total Global Rejections, Approval Rate).
+- Privacy footnote in the Footer.
 - `lucide-react` dependency for modern iconography.
 - Favorites/Bookmark system with `localStorage` persistence.
 - Interactive request tabs (cURL, Fetch, Python) in API docs.

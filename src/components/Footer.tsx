@@ -26,6 +26,9 @@ export function Footer() {
           <p className="mt-1.5 text-xs text-zinc-500 max-w-md leading-relaxed">
             API dan Generator penolakan open source gratis untuk membantu menjaga work-life balance dan kesejahteraan mental Anda.
           </p>
+          <p className="mt-4 text-[11px] text-zinc-500/80 max-w-md leading-relaxed italic border-l border-zinc-800 pl-3">
+            “Kami cuma menyimpan hitungan lokal dan membatasi request biar server nggak ikut burnout kayak usernya. So, tidak ada akun, tidak ada tracking creepy, tidak ada drama. Kamu datang, bilang nggak, lalu lanjut hidup.”
+          </p>
         </div>
         
         <div className="flex flex-wrap items-center gap-4 text-xs font-semibold">
