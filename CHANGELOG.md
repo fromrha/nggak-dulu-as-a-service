@@ -6,6 +6,10 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
+## [v0.2.1] - 2026-05-21
+### Fixed
+- UI now displays the correct rate limit error message when API returns HTTP 429.
+
 ## [v0.2.0] - 2026-05-21
 ### Added
 - Local request rejection counter (`nggakDuluLocalCount`) using `localStorage`.
