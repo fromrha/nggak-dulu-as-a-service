@@ -6,6 +6,13 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
+## [v0.3.0] - 2026-05-21
+### Added
+- Duplicate prevention mechanism in `/api/no` endpoint to avoid serving the same rejection sentence twice within the same rate limit session.
+
+### Changed
+- Increased rate limit window from 10 minutes to 30 minutes (30 requests per 30 minutes).
+
 ## [v0.2.1] - 2026-05-21
 ### Fixed
 - UI now displays the correct rate limit error message when API returns HTTP 429.

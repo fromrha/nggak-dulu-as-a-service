@@ -23,7 +23,11 @@ type SelectedReason = {
   tone: Tone;
 };
 
-export function getRandomReason({ category, tone }: RandomReasonInput = {}): SelectedReason | null {
+export function getRandomReason({ 
+  category, 
+  tone, 
+  excludeTexts = [] 
+}: RandomReasonInput & { excludeTexts?: string[] } = {}): SelectedReason | null {
   const pool: SelectedReason[] = [];
 
   const catsToSearch = category ? [category] : CATEGORIES;
@@ -33,12 +37,18 @@ export function getRandomReason({ category, tone }: RandomReasonInput = {}): Sel
     for (const t of tonesToSearch) {
       const list = reasons[cat]?.[t] || [];
       for (const text of list) {
-        pool.push({ text, category: cat, tone: t });
+        if (!excludeTexts.includes(text)) {
+          pool.push({ text, category: cat, tone: t });
+        }
       }
     }
   }
 
   if (pool.length === 0) {
+    // If all matches were excluded, reset exclusion list to avoid empty result
+    if (excludeTexts.length > 0) {
+      return getRandomReason({ category, tone, excludeTexts: [] });
+    }
     return null;
   }
 
