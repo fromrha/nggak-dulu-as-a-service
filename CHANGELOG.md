@@ -6,6 +6,10 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
+## [v0.3.1] - 2026-05-21
+### Fixed
+- Fixed layout crop and empty footer gap bug when clicking Hero CTA button by changing main container overflow-hidden to overflow-x-hidden.
+
 ## [v0.3.0] - 2026-05-21
 ### Added
 - Duplicate prevention mechanism in `/api/no` endpoint to avoid serving the same rejection sentence twice within the same rate limit session.
