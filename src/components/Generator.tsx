@@ -99,7 +99,11 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
       const data = (await response.json()) as ApiResponse;
 
       if (!response.ok || "error" in data) {
-        setError("Kombinasi kategori & tone ini belum punya template alasan. Coba kombinasi lain!");
+        if (response.status === 429 && "error" in data) {
+          setError(data.error);
+        } else {
+          setError("Kombinasi kategori & tone ini belum punya template alasan. Coba kombinasi lain!");
+        }
         return;
       }
 
