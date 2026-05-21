@@ -6,6 +6,17 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 
+## [v0.3.2] - 2026-05-22
+### Fixed
+- Fixed double scrollbars on the page by resolving overflow rules between html, body, and main.
+- Fixed layout crop and bottom footer empty gap bug when clicking anchor links by removing overflow-x-hidden on the main element.
+
+### Changed
+- Redesigned Hero section to be full viewport height (100% VH).
+- Simplified Hero section CTAs to a single primary button ("Generate Nggak Dulu") and a stacked text-only tertiary link ("Panggil API-nya").
+- Updated Hero badge copy to "Public API untuk menolak dengan sedikit martabat."
+- Updated Hero title copy to "Untuk semua ajakan yang harusnya tidak kamu iyakan".
+
 ## [v0.3.1] - 2026-05-21
 ### Fixed
 - Fixed layout crop and empty footer gap bug when clicking Hero CTA button by changing main container overflow-hidden to overflow-x-hidden.
