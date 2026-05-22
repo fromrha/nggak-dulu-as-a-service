@@ -6,7 +6,7 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
 ### Changed
-- Changed serif font in the Hero section to Playfair Display for a more premium look.
+- Changed serif font in the Hero section to EB Garamond (medium italic) for a more premium look.
 - Adjusted line height on the Hero heading and added top margin on mobile view to prevent text overlapping.
 
 ## [v0.3.2] - 2026-05-22
