@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${ebGaramond.variable} scroll-smooth antialiased`}>
+    <html lang="id" className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${ebGaramond.variable} scroll-smooth antialiased`} suppressHydrationWarning>
       <body>{children}</body>
     </html>
   );

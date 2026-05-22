@@ -32,7 +32,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-zinc-400 sm:text-lg">
-          Generator penolakan untuk orang baik yang capek jadi people pleaser berkedok fleksibel.
+          Buat kamu si gak enakan yang tiap ada ajakan langsung anxiety duluan. Padahal nggak mau. Padahal capek. Tapi tetep bilang iya juga. — bestie, <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0 font-serif font-medium italic pr-2">please stop!</span>This is for your own good.
         </p>
 
         {/* Actions */}

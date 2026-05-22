@@ -11,6 +11,7 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 ### Fixed
 - Fixed font fallback issue where EB Garamond failed to load by explicitly defining weight and style.
 - Fixed italic text clipping on the last character ('n') in the Hero section by adding right padding.
+- Fixed React hydration mismatch error caused by browser extensions by adding suppressHydrationWarning to html element.
 
 ### Changed
 - Changed serif font in the Hero section to EB Garamond (medium italic) for a more premium look.
