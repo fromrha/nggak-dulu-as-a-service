@@ -5,6 +5,9 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
+### Added
+- Added Back button in Generator UI to allow restoring up to 3 previous generated reasons.
+
 ### Fixed
 - Fixed font fallback issue where EB Garamond failed to load by explicitly defining weight and style.
 - Fixed italic text clipping on the last character ('n') in the Hero section by adding right padding.

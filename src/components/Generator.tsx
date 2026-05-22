@@ -21,7 +21,8 @@ import {
   Terminal, 
   MessageSquareOff,
   Folder,
-  Sliders
+  Sliders,
+  Undo2
 } from "lucide-react";
 
 interface GeneratorProps {
@@ -42,6 +43,14 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
   // Favorites State
   const [favorites, setFavorites] = useState<Reason[]>([]);
   const [favCopiedId, setFavCopiedId] = useState<string | null>(null);
+
+  // History State (max 3 items)
+  const [history, setHistory] = useState<{
+    text: string;
+    meta: string;
+    category: Category | "";
+    tone: Tone | "";
+  }[]>([]);
 
   // Stats State
   const [localCount, setLocalCount] = useState<number>(0);
@@ -107,6 +116,14 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
         return;
       }
 
+      // Save current state to history before updating with new generation
+      if (result !== initialText) {
+        setHistory((prev) => [
+          { text: result, meta, category, tone: activeTone },
+          ...prev
+        ].slice(0, 3));
+      }
+
       setResult(data.text);
       setMeta(`${CATEGORY_LABELS[data.category]} / ${TONE_LABELS[data.tone]}`);
 
@@ -125,6 +142,19 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function goBack() {
+    if (history.length === 0) return;
+
+    const [prev, ...rest] = history;
+    setResult(prev.text);
+    setMeta(prev.meta);
+    setCategory(prev.category);
+    onToneChange(prev.tone);
+    setHistory(rest);
+    setError("");
+    setCopied(false);
   }
 
   async function copyResult() {
@@ -391,6 +421,18 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
 
               {/* Main Controls Row */}
               <div className="flex gap-3">
+                <button
+                  id="back-button"
+                  type="button"
+                  onClick={goBack}
+                  disabled={isLoading || history.length === 0}
+                  title="Kembali ke alasan sebelumnya"
+                  className="theme-transition flex items-center justify-center gap-2 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white px-5 py-4 font-bold text-sm cursor-pointer disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  <Undo2 className="h-4 w-4" />
+                  <span className="hidden sm:inline">Kembali</span>
+                </button>
+
                 <button
                   id="generate-button"
                   type="button"
