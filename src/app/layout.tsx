@@ -15,7 +15,8 @@ const spaceGrotesk = Space_Grotesk({
 const ebGaramond = EB_Garamond({
   variable: "--font-eb-garamond",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  weight: "500",
+  style: "italic",
 });
 
 export const metadata: Metadata = {

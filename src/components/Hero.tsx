@@ -25,7 +25,7 @@ export function Hero() {
           className="text-balance text-5xl font-medium tracking-tight text-white sm:text-7xl leading-[1.3] md:leading-[1.2]"
         >
           Untuk semua ajakan yang harusnya{" "}
-          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0 font-serif font-medium italic">
+          <span className="theme-transition bg-gradient-to-r from-[rgb(var(--accent-primary))] to-[rgb(var(--accent-secondary))] bg-clip-text text-transparent block sm:inline mt-2 sm:mt-0 font-serif font-medium italic pr-2">
             tidak kamu iyakan
           </span>
         </h1>
