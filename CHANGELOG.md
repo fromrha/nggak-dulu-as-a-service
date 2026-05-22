@@ -5,6 +5,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 Versioning follows [Semantic Versioning](https://semver.org/)
 
 ## [Unreleased]
+### Fixed
+- Fixed font fallback issue where EB Garamond failed to load by explicitly defining weight and style.
+- Fixed italic text clipping on the last character ('n') in the Hero section by adding right padding.
+
 ### Changed
 - Changed serif font in the Hero section to EB Garamond (medium italic) for a more premium look.
 - Adjusted line height on the Hero heading and added top margin on mobile view to prevent text overlapping.
