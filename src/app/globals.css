@@ -3,7 +3,7 @@
 @theme {
   --font-sans: var(--font-plus-jakarta), sans-serif;
   --font-mono: var(--font-space-grotesk), monospace;
-  --font-serif: var(--font-playfair), serif;
+  --font-serif: var(--font-eb-garamond), serif;
 }
 
 :root {

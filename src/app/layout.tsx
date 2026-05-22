@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Space_Grotesk, Playfair_Display } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk, EB_Garamond } from "next/font/google";
 import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
@@ -12,9 +12,10 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${playfairDisplay.variable} scroll-smooth antialiased`}>
+    <html lang="id" className={`${plusJakartaSans.variable} ${spaceGrotesk.variable} ${ebGaramond.variable} scroll-smooth antialiased`}>
       <body>{children}</body>
     </html>
   );
