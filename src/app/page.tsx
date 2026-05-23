@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ApiDocs } from "@/components/ApiDocs";
 import { Footer } from "@/components/Footer";
 import { Generator } from "@/components/Generator";
@@ -9,6 +9,15 @@ import type { Tone } from "@/lib/types";
 
 export default function Home() {
   const [tone, setTone] = useState<Tone | "">("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    }
+  }, []);
 
   return (
     <main 

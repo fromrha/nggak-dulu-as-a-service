@@ -12,6 +12,7 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 - Fixed font fallback issue where EB Garamond failed to load by explicitly defining weight and style.
 - Fixed italic text clipping on the last character ('n') in the Hero section by adding right padding.
 - Fixed React hydration mismatch error caused by browser extensions by adding suppressHydrationWarning to html element.
+- Fixed page load scroll position on refresh by forcing manual scroll restoration and scrolling to the top on mount.
 
 ### Changed
 - Redesigned Developer Console top-left dots into macOS-style colored traffic lights (Red, Yellow, Green).
