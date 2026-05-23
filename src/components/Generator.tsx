@@ -202,7 +202,11 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
   }
 
   return (
-    <section id="generator" className="px-6 py-16 md:py-24 relative" aria-labelledby="generator-title">
+    <section id="generator" className="px-6 py-16 md:py-24 relative overflow-hidden" aria-labelledby="generator-title">
+      {/* Ambient background glows */}
+      <div className="absolute top-1/3 right-[15%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[110px] pointer-events-none -z-10" />
+      <div className="absolute bottom-[20%] left-[20%] w-[350px] h-[350px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-start">
         {/* Left Column: Heading and info */}
         <div className="lg:sticky lg:top-8">
@@ -232,30 +236,33 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
 
           {/* Stats Cards */}
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
-              <span className="text-xs font-bold text-zinc-400">Your Requests Rejected</span>
-              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none">{localCount}</span>
+            <div className="terminal-acrylic p-4 rounded-2xl border border-white/5 flex flex-col justify-between min-h-[100px] relative overflow-hidden shadow-lg">
+              <div className="absolute inset-0 crt-scanlines opacity-5 pointer-events-none" />
+              <span className="text-xs font-bold text-zinc-400 relative z-10">Your Requests Rejected</span>
+              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none relative z-10" style={{ textShadow: "0 0 8px rgb(var(--accent-primary) / 0.6)" }}>{localCount}</span>
             </div>
             
-            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
-              <span className="text-xs font-bold text-zinc-400">Total Global Rejections</span>
-              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none">
+            <div className="terminal-acrylic p-4 rounded-2xl border border-white/5 flex flex-col justify-between min-h-[100px] relative overflow-hidden shadow-lg">
+              <div className="absolute inset-0 crt-scanlines opacity-5 pointer-events-none" />
+              <span className="text-xs font-bold text-zinc-400 relative z-10">Total Global Rejections</span>
+              <span className="mt-3 text-3xl font-extrabold text-white font-mono leading-none relative z-10" style={{ textShadow: "0 0 8px rgb(var(--accent-primary) / 0.6)" }}>
                 {globalCount !== null ? globalCount.toLocaleString("id-ID") : "—"}
               </span>
             </div>
             
-            <div className="glass-panel p-4 rounded-2xl border border-zinc-800/50 flex flex-col justify-between min-h-[100px] relative overflow-hidden bg-zinc-900/25">
-              <span className="text-xs font-bold text-zinc-400">Approval Rate</span>
-              <span className="mt-3 text-3xl font-extrabold text-rose-500 font-mono leading-none">0%</span>
+            <div className="terminal-acrylic p-4 rounded-2xl border border-white/5 flex flex-col justify-between min-h-[100px] relative overflow-hidden shadow-lg">
+              <div className="absolute inset-0 crt-scanlines opacity-5 pointer-events-none" />
+              <span className="text-xs font-bold text-zinc-400 relative z-10">Approval Rate</span>
+              <span className="mt-3 text-3xl font-extrabold text-rose-500 font-mono leading-none glow-text-amber relative z-10">0%</span>
             </div>
           </div>
         </div>
 
         {/* Right Column: Generator GUI */}
         <div className="space-y-6">
-          <div className="glass-panel rounded-[2rem] p-6 md:p-8 shadow-[0_30px_100px_rgba(0,0,0,0.4)] relative overflow-hidden">
+          <div className="terminal-acrylic rounded-[2rem] p-6 md:p-8 shadow-[0_30px_100px_rgba(0,0,0,0.45)] border border-white/5 relative overflow-hidden">
             {/* Ambient card background glow */}
-            <div className="theme-transition absolute -bottom-24 -right-24 -z-10 h-72 w-72 rounded-full bg-[rgb(var(--accent-primary)/0.05)] blur-[80px] pointer-events-none" />
+            <div className="theme-transition absolute -bottom-24 -right-24 -z-10 h-72 w-72 rounded-full bg-[rgb(var(--accent-primary)/0.08)] blur-[80px] pointer-events-none" />
 
             <div className="space-y-6">
               {/* Category selector pills */}
@@ -333,28 +340,33 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
               </div>
 
               {/* Display Result Panel (Terminal Style) */}
-              <div className="theme-transition rounded-[2rem] bg-gradient-to-br from-[rgb(var(--accent-primary)/0.35)] via-[rgb(var(--accent-secondary)/0.15)] to-transparent p-[1px]">
-                <div className="rounded-[calc(2rem-1px)] bg-zinc-950 p-6 md:p-8 min-h-[220px] flex flex-col justify-between relative overflow-hidden">
+              <div className="theme-transition rounded-[2rem] bg-gradient-to-br from-[rgb(var(--accent-primary)/0.35)] via-[rgb(var(--accent-secondary)/0.15)] to-transparent p-[1px] relative overflow-hidden">
+                <div className="rounded-[calc(2rem-1px)] bg-[#0b1021]/80 p-6 md:p-8 min-h-[220px] flex flex-col justify-between relative overflow-hidden border border-white/5">
                   
+                  {/* CRT Screen Effects */}
+                  <div className="absolute inset-0 crt-scanlines opacity-20 pointer-events-none z-20" />
+                  <div className="absolute inset-0 crt-noise pointer-events-none z-20" />
+                  <div className="absolute inset-0 crt-vignette pointer-events-none z-20" />
+
                   {/* Top Bar inside Terminal styling */}
-                  <div className="flex items-center justify-between border-b border-zinc-900 pb-4 mb-4">
+                  <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4 relative z-10">
                     <div className="flex items-center gap-1.5">
-                      <div className="h-3 w-3 rounded-full bg-red-500/80" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
-                      <div className="h-3 w-3 rounded-full bg-green-500/80" />
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
                       <span className="ml-2 font-mono text-[10px] tracking-wide text-zinc-500 uppercase flex items-center gap-1">
                         <Terminal className="h-3 w-3" />
                         System.Rejection
                       </span>
                     </div>
-                    <span className="theme-transition font-mono text-[11px] font-bold uppercase tracking-wider text-[rgb(var(--accent-primary))] bg-[rgb(var(--accent-primary)/0.08)] border border-[rgb(var(--accent-primary)/0.15)] px-2 py-0.5 rounded">
+                    <span className="theme-transition font-mono text-[11px] font-bold uppercase tracking-wider text-[rgb(var(--accent-primary))] bg-[rgb(var(--accent-primary)/0.08)] border border-[rgb(var(--accent-primary)/0.15)] px-2 py-0.5 rounded relative z-10 shadow-[0_0_8px_rgb(var(--accent-primary)/0.2)]">
                       {meta}
                     </span>
                   </div>
 
                   {/* Generated Text Block */}
-                  <div className="flex-1 flex flex-col justify-center py-2">
-                    <blockquote className="text-pretty text-xl font-bold leading-relaxed text-zinc-100 sm:text-2xl font-mono">
+                  <div className="flex-1 flex flex-col justify-center py-2 relative z-10">
+                    <blockquote className="text-pretty text-xl font-bold leading-relaxed text-emerald-400 sm:text-2xl font-mono glow-text-emerald">
                       “{result}”
                     </blockquote>
                     
@@ -366,7 +378,7 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
                   </div>
 
                   {/* Action row at bottom of quote */}
-                  <div className="mt-6 flex justify-end gap-2 border-t border-zinc-900 pt-4">
+                  <div className="mt-6 flex justify-end gap-2 border-t border-white/5 pt-4 relative z-10">
                     {/* Save to favorites */}
                     <button
                       type="button"
@@ -456,9 +468,10 @@ export function Generator({ onToneChange, activeTone }: GeneratorProps) {
           </div>
 
           {/* Favorites (Saved Items) Section */}
-          <div className="glass-panel rounded-[2rem] p-6 md:p-8 shadow-xl">
-            <h3 className="text-lg font-bold text-white flex items-center gap-2">
-              <Bookmark className="h-5 w-5 text-amber-400" />
+          <div className="terminal-acrylic rounded-[2rem] p-6 md:p-8 shadow-xl border border-white/5 relative overflow-hidden">
+            <div className="absolute inset-0 crt-scanlines opacity-5 pointer-events-none" />
+            <h3 className="text-lg font-bold text-white flex items-center gap-2 relative z-10">
+              <Bookmark className="h-5 w-5 text-amber-400 glow-text-amber" />
               <span>Alasan Tersimpan ({favorites.length})</span>
             </h3>
             

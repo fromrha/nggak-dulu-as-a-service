@@ -15,7 +15,7 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 - Fixed page load scroll position on refresh by forcing manual scroll restoration and scrolling to the top on mount.
 
 ### Changed
-- Redesigned Developer Console top-left dots into macOS-style colored traffic lights (Red, Yellow, Green).
+- Redesigned the entire site interface with a premium retro-futuristic acrylic terminal theme, propagating the style across the Hero badge, Generator stats/casing cards, dynamic quote screen display, and API Documentation parameters cards.
 - Changed serif font in the Hero section to EB Garamond (medium italic) for a more premium look.
 - Adjusted line height on the Hero heading and added top margin on mobile view to prevent text overlapping.
 

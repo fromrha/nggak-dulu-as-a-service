@@ -14,9 +14,16 @@ export function Hero() {
         <div className="theme-transition absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 h-[300px] w-[300px] rounded-full bg-[rgb(var(--accent-primary)/0.12)] blur-[100px] pointer-events-none" />
 
         {/* Badge */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-1.5 text-xs font-semibold text-zinc-300 shadow-xl backdrop-blur-md">
-          <Sparkles className="theme-transition h-3.5 w-3.5 text-[rgb(var(--accent-primary))]" />
-          <span>Public API untuk menolak dengan sedikit martabat.</span>
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/5 terminal-acrylic px-4 py-1.5 text-xs font-semibold text-zinc-300 shadow-[0_0_15px_rgba(0,0,0,0.4)] relative overflow-hidden">
+          {/* CRT Screen Effects inside badge */}
+          <div className="absolute inset-0 crt-scanlines opacity-10 pointer-events-none" />
+          <div className="absolute inset-0 crt-noise pointer-events-none" />
+          
+          <Sparkles 
+            className="theme-transition h-3.5 w-3.5 text-[rgb(var(--accent-primary))] relative z-10" 
+            style={{ filter: "drop-shadow(0 0 4px rgb(var(--accent-primary) / 0.8))" }} 
+          />
+          <span className="relative z-10">Public API untuk menolak dengan sedikit martabat.</span>
         </div>
 
         {/* Main Heading */}
