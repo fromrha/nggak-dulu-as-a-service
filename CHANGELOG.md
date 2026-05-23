@@ -14,6 +14,7 @@ Versioning follows [Semantic Versioning](https://semver.org/)
 - Fixed React hydration mismatch error caused by browser extensions by adding suppressHydrationWarning to html element.
 
 ### Changed
+- Redesigned Developer Console top-left dots into macOS-style colored traffic lights (Red, Yellow, Green).
 - Changed serif font in the Hero section to EB Garamond (medium italic) for a more premium look.
 - Adjusted line height on the Hero heading and added top margin on mobile view to prevent text overlapping.
 

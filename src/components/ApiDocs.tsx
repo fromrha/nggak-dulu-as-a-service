@@ -86,9 +86,9 @@ print(data["text"])`
             {/* Terminal Tab Bar header */}
             <div className="bg-zinc-950 px-5 py-4 border-b border-zinc-900 flex items-center justify-between">
               <div className="flex items-center gap-1.5">
-                <div className="h-2.5 w-2.5 rounded-full bg-zinc-800" />
-                <div className="h-2.5 w-2.5 rounded-full bg-zinc-800" />
-                <div className="h-2.5 w-2.5 rounded-full bg-zinc-800" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
+                <div className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
                 <span className="ml-2 font-mono text-[11px] text-zinc-500 uppercase tracking-wide">Developer Console</span>
               </div>
               
